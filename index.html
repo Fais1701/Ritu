@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>For Ritumon ♡</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
 
   <style>
@@ -39,7 +37,6 @@
         radial-gradient(circle at 8% 8%, #fde9ee 0%, transparent 28%),
         radial-gradient(circle at 92% 28%, #f9e8df 0%, transparent 26%),
         var(--cream);
-
       color: var(--brown);
       font-family: "DM Sans", sans-serif;
       overflow-x: hidden;
@@ -55,8 +52,6 @@
     button {
       cursor: pointer;
     }
-
-    /* Floating hearts */
 
     .heart {
       position: fixed;
@@ -102,8 +97,6 @@
         opacity: 0;
       }
     }
-
-    /* Hero */
 
     .hero {
       min-height: 100vh;
@@ -170,8 +163,6 @@
       transform: translateY(-3px);
     }
 
-    /* Sections */
-
     .section {
       width: min(900px, 90%);
       margin: auto;
@@ -214,8 +205,6 @@
       font-size: 16px;
     }
 
-    /* Wishlist heading */
-
     .wishlist-heading {
       text-align: center;
       margin-bottom: 45px;
@@ -237,8 +226,6 @@
       margin-top: 12px;
     }
 
-    /* Wishlist card */
-
     .wishlist-card {
       background: rgba(255, 255, 255, 0.84);
       border: 1px solid var(--border);
@@ -246,8 +233,6 @@
       padding: clamp(25px, 5vw, 50px);
       box-shadow: 0 25px 70px rgba(100, 60, 70, 0.08);
     }
-
-    /* Wishlist items */
 
     .wishlist-item {
       background: #fffafa;
@@ -294,8 +279,6 @@
       color: var(--dark-rose);
     }
 
-    /* Fields */
-
     .field {
       margin-bottom: 16px;
     }
@@ -340,8 +323,6 @@
       gap: 15px;
     }
 
-    /* Buttons */
-
     .add-button {
       width: 100%;
       border: 1px dashed #dcaab7;
@@ -380,8 +361,6 @@
       transform: none;
     }
 
-    /* Success */
-
     .success {
       display: none;
       text-align: center;
@@ -415,8 +394,6 @@
       line-height: 1.8;
     }
 
-    /* Footer */
-
     footer {
       text-align: center;
       padding: 50px 20px 80px;
@@ -428,10 +405,7 @@
       color: var(--rose);
     }
 
-    /* Mobile */
-
     @media (max-width: 650px) {
-
       .hero h1 {
         letter-spacing: -3px;
       }
@@ -455,20 +429,14 @@
   </style>
 </head>
 
-
 <body>
 
-  <!-- Floating hearts -->
   <div class="heart">♡</div>
   <div class="heart">♡</div>
   <div class="heart">♡</div>
   <div class="heart">♡</div>
-
-
-  <!-- HERO -->
 
   <section class="hero">
-
     <div class="hero-content">
 
       <div class="small-title">
@@ -477,7 +445,6 @@
 
       <h1>
         Rita Roy
-
         <span class="hero-script">
           Ritumon
         </span>
@@ -491,18 +458,14 @@
 
       <button
         class="scroll-button"
-        onclick="document.getElementById('note').scrollIntoView()"
+        type="button"
+        onclick="document.getElementById('note').scrollIntoView({ behavior: 'smooth' })"
       >
         there's something for you ♡
       </button>
 
     </div>
-
   </section>
-
-
-
-  <!-- LOVE NOTE -->
 
   <section class="section" id="note">
 
@@ -517,9 +480,10 @@
       </h2>
 
       <p>
-
         I could write something incredibly dramatic here,
         but you already know how I feel about you.
+
+        <br><br>
 
         So instead, here's a tiny corner of the internet
         dedicated to one very important question:
@@ -543,16 +507,11 @@
 
         It's your birthday.
         You get to be a little unreasonable.
-
       </p>
 
     </div>
 
   </section>
-
-
-
-  <!-- WISHLIST -->
 
   <section class="section">
 
@@ -572,17 +531,13 @@
 
     </div>
 
-
     <div class="wishlist-card">
-
-      <!--
-        FORMspree endpoint
-      -->
 
       <form
         id="wishlistForm"
         action="https://formspree.io/f/xykbwayy"
         method="POST"
+        novalidate
       >
 
         <input
@@ -597,9 +552,7 @@
           id="wishlistData"
         >
 
-
         <div id="items"></div>
-
 
         <button
           type="button"
@@ -608,7 +561,6 @@
         >
           ＋ add another thing I want
         </button>
-
 
         <div class="field">
 
@@ -623,7 +575,6 @@
 
         </div>
 
-
         <button
           class="submit-button"
           type="submit"
@@ -633,13 +584,7 @@
 
       </form>
 
-
-      <!-- SUCCESS -->
-
-      <div
-        id="success"
-        class="success"
-      >
+      <div id="success" class="success">
 
         <div class="success-heart">
           ♡
@@ -650,7 +595,6 @@
         </h2>
 
         <p>
-
           Your wishlist has officially reached me, Ritumon.
 
           <br><br>
@@ -660,7 +604,6 @@
           <br>
 
           Now let's see what happens.
-
         </p>
 
       </div>
@@ -669,24 +612,15 @@
 
   </section>
 
-
-
   <footer>
     made with a little bit of love
     <span>♡</span>
     for Ritumon
   </footer>
 
-
-
   <script>
 
     let itemCount = 0;
-
-
-    /* =========================
-       ADD WISHLIST ITEM
-    ========================== */
 
     function addItem() {
 
@@ -700,7 +634,6 @@
 
       item.className =
         "wishlist-item";
-
 
       item.innerHTML = `
 
@@ -726,7 +659,6 @@
 
         </div>
 
-
         <div class="field">
 
           <label>
@@ -737,11 +669,11 @@
             class="item-name"
             type="text"
             placeholder="Tell me what you've been wanting..."
+            autocomplete="off"
             required
           >
 
         </div>
-
 
         <div class="two-columns">
 
@@ -767,7 +699,6 @@
 
           </div>
 
-
           <div class="field">
 
             <label>
@@ -776,14 +707,14 @@
 
             <input
               class="item-link"
-              type="url"
-              placeholder="Drop the link here..."
+              type="text"
+              placeholder="Drop the link or website name here..."
+              autocomplete="off"
             >
 
           </div>
 
         </div>
-
 
         <div class="field">
 
@@ -809,7 +740,6 @@
 
         </div>
 
-
         <div class="field">
 
           <label>
@@ -822,41 +752,27 @@
           ></textarea>
 
         </div>
-
       `;
 
-
       container.appendChild(item);
-
     }
-
-
-
-    /* =========================
-       REMOVE ITEM
-    ========================== */
 
     function removeItem(button) {
 
-      button
-        .closest(".wishlist-item")
-        .remove();
+      const item =
+        button.closest(".wishlist-item");
+
+      if (item) {
+        item.remove();
+      }
 
       renumberItems();
-
     }
-
-
-
-    /* =========================
-       RENUMBER ITEMS
-    ========================== */
 
     function renumberItems() {
 
       const items =
         document.querySelectorAll(".wishlist-item");
-
 
       items.forEach((item, index) => {
 
@@ -865,22 +781,58 @@
           `${index + 1}. something you want`;
 
       });
-
     }
 
+    function collectWishlist() {
 
+      const items =
+        document.querySelectorAll(".wishlist-item");
 
-    /* =========================
-       START WITH ONE ITEM
-    ========================== */
+      const wishlist = [];
+
+      items.forEach((item, index) => {
+
+        wishlist.push({
+
+          number:
+            index + 1,
+
+          item:
+            item
+              .querySelector(".item-name")
+              .value
+              .trim(),
+
+          category:
+            item
+              .querySelector(".item-category")
+              .value,
+
+          link:
+            item
+              .querySelector(".item-link")
+              .value
+              .trim(),
+
+          priority:
+            item
+              .querySelector(".item-priority")
+              .value,
+
+          why:
+            item
+              .querySelector(".item-reason")
+              .value
+              .trim()
+
+        });
+
+      });
+
+      return wishlist;
+    }
 
     addItem();
-
-
-
-    /* =========================
-       FORM SUBMISSION
-    ========================== */
 
     document
       .getElementById("wishlistForm")
@@ -890,12 +842,12 @@
 
           event.preventDefault();
 
+          const form = this;
 
           const items =
             document.querySelectorAll(
               ".wishlist-item"
             );
-
 
           if (items.length === 0) {
 
@@ -904,57 +856,36 @@
             );
 
             return;
-
           }
 
+          const wishlist =
+            collectWishlist();
 
-          const wishlist = [];
+          const emptyItem =
+            wishlist.find(
+              entry => !entry.item
+            );
 
+          if (emptyItem) {
 
-          items.forEach((item, index) => {
+            const itemCards =
+              document.querySelectorAll(
+                ".wishlist-item"
+              );
 
-            wishlist.push({
+            const emptyIndex =
+              wishlist.indexOf(emptyItem);
 
-              number:
-                index + 1,
+            itemCards[emptyIndex]
+              .querySelector(".item-name")
+              .focus();
 
-              item:
-                item
-                  .querySelector(".item-name")
-                  .value
-                  .trim(),
+            alert(
+              "Tell me what you want first ♡"
+            );
 
-              category:
-                item
-                  .querySelector(".item-category")
-                  .value,
-
-              link:
-                item
-                  .querySelector(".item-link")
-                  .value
-                  .trim(),
-
-              priority:
-                item
-                  .querySelector(".item-priority")
-                  .value,
-
-              why:
-                item
-                  .querySelector(".item-reason")
-                  .value
-                  .trim()
-
-            });
-
-          });
-
-
-          /*
-            Convert the complete wishlist
-            into one Formspree field.
-          */
+            return;
+          }
 
           document
             .getElementById("wishlistData")
@@ -965,20 +896,15 @@
               2
             );
 
-
-          const form = this;
-
           const button =
             form.querySelector(
               ".submit-button"
             );
 
-
           button.disabled = true;
 
           button.textContent =
             "sending your little list...";
-
 
           try {
 
@@ -998,7 +924,6 @@
                 }
               );
 
-
             if (!response.ok) {
 
               throw new Error(
@@ -1007,16 +932,13 @@
 
             }
 
-
             form.style.display =
               "none";
-
 
             document
               .getElementById("success")
               .classList
               .add("show");
-
 
             document
               .getElementById("success")
@@ -1025,17 +947,14 @@
                 block: "center"
               });
 
-
           } catch (error) {
 
             alert(
-              "Something went wrong. Please try again ♡"
+              "Something went wrong while sending it. Please try again ♡"
             );
-
 
             button.disabled =
               false;
-
 
             button.textContent =
               "Send me your wishlist ♡";
