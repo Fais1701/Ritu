@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For Ritumon ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #fff8f5;
+      --pink: #f7d9df;
+      --soft-pink: #fdecef;
+      --rose: #c96f83;
+      --dark-rose: #8d4358;
+      --brown: #49383b;
+      --muted: #8d777c;
+      --white: #ffffff;
+      --border: #efdde1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 8% 8%, #fde9ee 0%, transparent 28%),
+        radial-gradient(circle at 92% 28%, #f9e8df 0%, transparent 26%),
+        var(--cream);
+
+      color: var(--brown);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* Floating hearts */
+
+    .heart {
+      position: fixed;
+      color: rgba(201, 111, 131, 0.35);
+      font-size: 22px;
+      pointer-events: none;
+      animation: floatHeart 8s linear infinite;
+      z-index: 0;
+    }
+
+    .heart:nth-child(1) {
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .heart:nth-child(2) {
+      left: 30%;
+      animation-delay: 2s;
+    }
+
+    .heart:nth-child(3) {
+      left: 65%;
+      animation-delay: 4s;
+    }
+
+    .heart:nth-child(4) {
+      left: 85%;
+      animation-delay: 1s;
+    }
+
+    @keyframes floatHeart {
+      from {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-10vh) rotate(25deg);
+        opacity: 0;
+      }
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .small-title {
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(70px, 14vw, 150px);
+      line-height: 0.75;
+      font-weight: 500;
+      letter-spacing: -5px;
+      color: var(--brown);
+    }
+
+    .hero-script {
+      display: block;
+      font-family: "Parisienne", cursive;
+      font-size: clamp(55px, 10vw, 100px);
+      color: var(--rose);
+      margin-top: 28px;
+      letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+      margin: 38px auto 0;
+      max-width: 520px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .scroll-button {
+      margin-top: 38px;
+      padding: 14px 25px;
+      border-radius: 50px;
+      border: 1px solid var(--rose);
+      background: transparent;
+      color: var(--dark-rose);
+      transition: 0.25s ease;
+    }
+
+    .scroll-button:hover {
+      background: var(--rose);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Sections */
+
+    .section {
+      width: min(900px, 90%);
+      margin: auto;
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .love-note {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: clamp(30px, 7vw, 65px);
+      box-shadow: 0 25px 70px rgba(100, 60, 70, 0.08);
+      text-align: center;
+    }
+
+    .script {
+      font-family: "Parisienne", cursive;
+      color: var(--rose);
+    }
+
+    .love-note .script {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .love-note h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(35px, 6vw, 55px);
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .love-note p {
+      max-width: 620px;
+      margin: auto;
+      color: var(--muted);
+      line-height: 2;
+      font-size: 16px;
+    }
+
+    /* Wishlist heading */
+
+    .wishlist-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .wishlist-heading .script {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .wishlist-heading h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(45px, 7vw, 70px);
+      font-weight: 500;
+    }
+
+    .wishlist-heading p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    /* Wishlist card */
+
+    .wishlist-card {
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: clamp(25px, 5vw, 50px);
+      box-shadow: 0 25px 70px rgba(100, 60, 70, 0.08);
+    }
+
+    /* Wishlist items */
+
+    .wishlist-item {
+      background: #fffafa;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      margin-bottom: 20px;
+      animation: appear 0.3s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .item-number {
+      color: var(--rose);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+    }
+
+    .remove {
+      border: none;
+      background: transparent;
+      color: #b89aa1;
+      font-size: 13px;
+    }
+
+    .remove:hover {
+      color: var(--dark-rose);
+    }
+
+    /* Fields */
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--brown);
+      padding: 14px 15px;
+      border-radius: 14px;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 4px rgba(201, 111, 131, 0.1);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    /* Buttons */
+
+    .add-button {
+      width: 100%;
+      border: 1px dashed #dcaab7;
+      background: var(--soft-pink);
+      color: var(--dark-rose);
+      padding: 16px;
+      border-radius: 16px;
+      margin: 5px 0 25px;
+      transition: 0.2s;
+    }
+
+    .add-button:hover {
+      background: var(--pink);
+    }
+
+    .submit-button {
+      display: block;
+      margin: 15px auto 0;
+      border: none;
+      background: var(--dark-rose);
+      color: white;
+      padding: 16px 35px;
+      border-radius: 50px;
+      box-shadow: 0 12px 30px rgba(141, 67, 88, 0.22);
+      transition: 0.25s;
+    }
+
+    .submit-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 17px 35px rgba(141, 67, 88, 0.28);
+    }
+
+    .submit-button:disabled {
+      opacity: 0.65;
+      cursor: wait;
+      transform: none;
+    }
+
+    /* Success */
+
+    .success {
+      display: none;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .success.show {
+      display: block;
+    }
+
+    .success-heart {
+      font-size: 60px;
+      animation: heartbeat 1.2s infinite;
+    }
+
+    @keyframes heartbeat {
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    .success h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 8vw, 65px);
+      font-weight: 500;
+      margin: 20px 0 10px;
+    }
+
+    .success p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* Footer */
+
+    footer {
+      text-align: center;
+      padding: 50px 20px 80px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer span {
+      color: var(--rose);
+    }
+
+    /* Mobile */
+
+    @media (max-width: 650px) {
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .two-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .love-note {
+        padding: 35px 25px;
+      }
+
+      .wishlist-card {
+        padding: 20px;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- Floating hearts -->
+  <div class="heart">♡</div>
+  <div class="heart">♡</div>
+  <div class="heart">♡</div>
+  <div class="heart">♡</div>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="small-title">
+        for the girl turning 23
+      </div>
+
+      <h1>
+        Rita Roy
+
+        <span class="hero-script">
+          Ritumon
+        </span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Another year of you being you.
+        <br>
+        And somehow, that's still my favourite thing.
+      </p>
+
+      <button
+        class="scroll-button"
+        onclick="document.getElementById('note').scrollIntoView()"
+      >
+        there's something for you ♡
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- LOVE NOTE -->
+
+  <section class="section" id="note">
+
+    <div class="love-note">
+
+      <div class="script">
+        Dear Ritumon,
+      </div>
+
+      <h2>
+        Chapter 23.
+      </h2>
+
+      <p>
+
+        I could write something incredibly dramatic here,
+        but you already know how I feel about you.
+
+        So instead, here's a tiny corner of the internet
+        dedicated to one very important question:
+
+        <br><br>
+
+        <strong>
+          What do you want for your birthday?
+        </strong>
+
+        <br><br>
+
+        Don't be shy.
+
+        Add the little things, the big things,
+        the things you've been secretly wanting,
+        and the things you've probably mentioned
+        approximately seventeen times.
+
+        <br><br>
+
+        It's your birthday.
+        You get to be a little unreasonable.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- WISHLIST -->
+
+  <section class="section">
+
+    <div class="wishlist-heading">
+
+      <div class="script">
+        your little list of wants
+      </div>
+
+      <h2>
+        Make your wishlist ♡
+      </h2>
+
+      <p>
+        I promise I'm paying attention.
+      </p>
+
+    </div>
+
+
+    <div class="wishlist-card">
+
+      <!--
+        FORMspree endpoint
+      -->
+
+      <form
+        id="wishlistForm"
+        action="https://formspree.io/f/xykbwayy"
+        method="POST"
+      >
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="Ritumon's 23rd Birthday Wishlist ♡"
+        >
+
+        <input
+          type="hidden"
+          name="wishlist"
+          id="wishlistData"
+        >
+
+
+        <div id="items"></div>
+
+
+        <button
+          type="button"
+          class="add-button"
+          onclick="addItem()"
+        >
+          ＋ add another thing I want
+        </button>
+
+
+        <div class="field">
+
+          <label>
+            anything else you want me to know?
+          </label>
+
+          <textarea
+            name="little_note"
+            placeholder="A hint, a story, or something you've been wanting to tell me..."
+          ></textarea>
+
+        </div>
+
+
+        <button
+          class="submit-button"
+          type="submit"
+        >
+          Send me your wishlist ♡
+        </button>
+
+      </form>
+
+
+      <!-- SUCCESS -->
+
+      <div
+        id="success"
+        class="success"
+      >
+
+        <div class="success-heart">
+          ♡
+        </div>
+
+        <h2>
+          It's with me now.
+        </h2>
+
+        <p>
+
+          Your wishlist has officially reached me, Ritumon.
+
+          <br><br>
+
+          You asked. I listened.
+
+          <br>
+
+          Now let's see what happens.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <footer>
+    made with a little bit of love
+    <span>♡</span>
+    for Ritumon
+  </footer>
+
+
+
+  <script>
+
+    let itemCount = 0;
+
+
+    /* =========================
+       ADD WISHLIST ITEM
+    ========================== */
+
+    function addItem() {
+
+      itemCount++;
+
+      const container =
+        document.getElementById("items");
+
+      const item =
+        document.createElement("div");
+
+      item.className =
+        "wishlist-item";
+
+
+      item.innerHTML = `
+
+        <div class="item-header">
+
+          <div class="item-number">
+            ${itemCount}. something you want
+          </div>
+
+          ${
+            itemCount > 1
+              ? `
+                <button
+                  type="button"
+                  class="remove"
+                  onclick="removeItem(this)"
+                >
+                  remove
+                </button>
+              `
+              : ""
+          }
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            what do you want?
+          </label>
+
+          <input
+            class="item-name"
+            type="text"
+            placeholder="Tell me what you've been wanting..."
+            required
+          >
+
+        </div>
+
+
+        <div class="two-columns">
+
+          <div class="field">
+
+            <label>
+              category
+            </label>
+
+            <select class="item-category">
+
+              <option>Something cute</option>
+              <option>Fashion</option>
+              <option>Beauty</option>
+              <option>Jewellery</option>
+              <option>Tech</option>
+              <option>Books</option>
+              <option>Food</option>
+              <option>Experience</option>
+              <option>Other</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="field">
+
+            <label>
+              where can I find it?
+            </label>
+
+            <input
+              class="item-link"
+              type="url"
+              placeholder="Drop the link here..."
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            how badly do you want it?
+          </label>
+
+          <select class="item-priority">
+
+            <option value="♡ would be nice">
+              ♡ would be nice
+            </option>
+
+            <option value="♡♡ really want it">
+              ♡♡ really want it
+            </option>
+
+            <option value="♡♡♡ Ritumon needs this">
+              ♡♡♡ Ritumon needs this
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            why this one?
+          </label>
+
+          <textarea
+            class="item-reason"
+            placeholder="Convince me..."
+          ></textarea>
+
+        </div>
+
+      `;
+
+
+      container.appendChild(item);
+
+    }
+
+
+
+    /* =========================
+       REMOVE ITEM
+    ========================== */
+
+    function removeItem(button) {
+
+      button
+        .closest(".wishlist-item")
+        .remove();
+
+      renumberItems();
+
+    }
+
+
+
+    /* =========================
+       RENUMBER ITEMS
+    ========================== */
+
+    function renumberItems() {
+
+      const items =
+        document.querySelectorAll(".wishlist-item");
+
+
+      items.forEach((item, index) => {
+
+        item.querySelector(".item-number")
+          .textContent =
+          `${index + 1}. something you want`;
+
+      });
+
+    }
+
+
+
+    /* =========================
+       START WITH ONE ITEM
+    ========================== */
+
+    addItem();
+
+
+
+    /* =========================
+       FORM SUBMISSION
+    ========================== */
+
+    document
+      .getElementById("wishlistForm")
+      .addEventListener(
+        "submit",
+        async function(event) {
+
+          event.preventDefault();
+
+
+          const items =
+            document.querySelectorAll(
+              ".wishlist-item"
+            );
+
+
+          if (items.length === 0) {
+
+            alert(
+              "Add at least one thing to your wishlist ♡"
+            );
+
+            return;
+
+          }
+
+
+          const wishlist = [];
+
+
+          items.forEach((item, index) => {
+
+            wishlist.push({
+
+              number:
+                index + 1,
+
+              item:
+                item
+                  .querySelector(".item-name")
+                  .value
+                  .trim(),
+
+              category:
+                item
+                  .querySelector(".item-category")
+                  .value,
+
+              link:
+                item
+                  .querySelector(".item-link")
+                  .value
+                  .trim(),
+
+              priority:
+                item
+                  .querySelector(".item-priority")
+                  .value,
+
+              why:
+                item
+                  .querySelector(".item-reason")
+                  .value
+                  .trim()
+
+            });
+
+          });
+
+
+          /*
+            Convert the complete wishlist
+            into one Formspree field.
+          */
+
+          document
+            .getElementById("wishlistData")
+            .value =
+            JSON.stringify(
+              wishlist,
+              null,
+              2
+            );
+
+
+          const form = this;
+
+          const button =
+            form.querySelector(
+              ".submit-button"
+            );
+
+
+          button.disabled = true;
+
+          button.textContent =
+            "sending your little list...";
+
+
+          try {
+
+            const response =
+              await fetch(
+                form.action,
+                {
+                  method: "POST",
+
+                  body:
+                    new FormData(form),
+
+                  headers: {
+                    "Accept":
+                      "application/json"
+                  }
+                }
+              );
+
+
+            if (!response.ok) {
+
+              throw new Error(
+                "Submission failed"
+              );
+
+            }
+
+
+            form.style.display =
+              "none";
+
+
+            document
+              .getElementById("success")
+              .classList
+              .add("show");
+
+
+            document
+              .getElementById("success")
+              .scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+              });
+
+
+          } catch (error) {
+
+            alert(
+              "Something went wrong. Please try again ♡"
+            );
+
+
+            button.disabled =
+              false;
+
+
+            button.textContent =
+              "Send me your wishlist ♡";
+
+          }
+
+        }
+      );
+
+  </script>
+
+</body>
+</html>
