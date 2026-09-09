@@ -51,6 +51,7 @@
 
     button {
       cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .heart {
@@ -100,6 +101,7 @@
 
     .hero {
       min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -303,6 +305,8 @@
       border-radius: 14px;
       outline: none;
       transition: 0.2s ease;
+      -webkit-appearance: none;
+      appearance: none;
     }
 
     input:focus,
@@ -424,6 +428,12 @@
 
       .section {
         padding: 70px 0;
+      }
+
+      .submit-button,
+      .add-button,
+      .scroll-button {
+        -webkit-touch-callout: none;
       }
     }
   </style>
@@ -705,11 +715,13 @@
               where can I find it?
             </label>
 
+            <!-- Text instead of URL so Netflix.com, Amazon, etc. work -->
             <input
               class="item-link"
               type="text"
               placeholder="Drop the link or website name here..."
               autocomplete="off"
+              inputmode="text"
             >
 
           </div>
@@ -757,6 +769,7 @@
       container.appendChild(item);
     }
 
+
     function removeItem(button) {
 
       const item =
@@ -768,6 +781,7 @@
 
       renumberItems();
     }
+
 
     function renumberItems() {
 
@@ -782,6 +796,7 @@
 
       });
     }
+
 
     function collectWishlist() {
 
@@ -832,7 +847,10 @@
       return wishlist;
     }
 
+
+    // Start with one wishlist item.
     addItem();
+
 
     document
       .getElementById("wishlistForm")
@@ -849,6 +867,7 @@
               ".wishlist-item"
             );
 
+
           if (items.length === 0) {
 
             alert(
@@ -858,24 +877,31 @@
             return;
           }
 
+
+          /*
+            First check whether every wishlist item
+            has a name.
+          */
           const wishlist =
             collectWishlist();
 
-          const emptyItem =
-            wishlist.find(
+          const emptyIndex =
+            wishlist.findIndex(
               entry => !entry.item
             );
 
-          if (emptyItem) {
+
+          if (emptyIndex !== -1) {
 
             const itemCards =
               document.querySelectorAll(
                 ".wishlist-item"
               );
 
-            const emptyIndex =
-              wishlist.indexOf(emptyItem);
-
+            /*
+              Keep the user at the actual field
+              that needs attention.
+            */
             itemCards[emptyIndex]
               .querySelector(".item-name")
               .focus();
@@ -887,6 +913,18 @@
             return;
           }
 
+
+          /*
+            Remove focus before doing anything else.
+            This is important on mobile because the
+            keyboard can otherwise cause the browser
+            to reposition the page unexpectedly.
+          */
+          if (document.activeElement) {
+            document.activeElement.blur();
+          }
+
+
           document
             .getElementById("wishlistData")
             .value =
@@ -896,15 +934,18 @@
               2
             );
 
+
           const button =
             form.querySelector(
               ".submit-button"
             );
 
+
           button.disabled = true;
 
           button.textContent =
             "sending your little list...";
+
 
           try {
 
@@ -924,6 +965,7 @@
                 }
               );
 
+
             if (!response.ok) {
 
               throw new Error(
@@ -932,20 +974,44 @@
 
             }
 
+
+            /*
+              Hide the form first.
+            */
             form.style.display =
               "none";
 
-            document
-              .getElementById("success")
-              .classList
-              .add("show");
 
-            document
-              .getElementById("success")
-              .scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-              });
+            /*
+              Show the success message.
+            */
+            const success =
+              document.getElementById(
+                "success"
+              );
+
+            success.classList.add(
+              "show"
+            );
+
+
+            /*
+              Wait briefly so mobile browsers
+              have time to close the keyboard and
+              update the layout before scrolling.
+            */
+            setTimeout(
+              function() {
+
+                success.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center"
+                });
+
+              },
+              150
+            );
+
 
           } catch (error) {
 
@@ -953,8 +1019,10 @@
               "Something went wrong while sending it. Please try again ♡"
             );
 
+
             button.disabled =
               false;
+
 
             button.textContent =
               "Send me your wishlist ♡";
